@@ -1,7 +1,9 @@
 #include <iostream>
+#include "FirstMenu.h"
+
 using namespace std;
 
 int main(){
-	cout << "Hello World!";
+	MainFirstMenu();
 	return 0;
 }
