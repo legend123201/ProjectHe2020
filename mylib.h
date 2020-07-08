@@ -9,10 +9,10 @@
 
 #define Enter 13
 
-void gotoxy(short x,short y);
-int wherex( void );
-int wherey( void );
-void clreol( );
+void gotoxy(short x, short y);
+int wherex(void);
+int wherey(void);
+void clreol();
 void SetColor(WORD color);
 void SetBGColor(WORD color);
 void clrscr();
