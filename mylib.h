@@ -18,4 +18,3 @@ void SetBGColor(WORD color);
 void clrscr();
 void fullScreen();
 void RemoveScroll();
-

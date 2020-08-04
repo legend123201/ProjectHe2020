@@ -74,7 +74,6 @@ void clrscr() {
 
 //-------------1 so ham ve giao dien tu them khac
 
-//dat mau cho nen man hinh
 void fullScreen()
 {
     system("mode con COLS=700");

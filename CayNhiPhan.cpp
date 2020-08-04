@@ -12,33 +12,36 @@ bool Empty(PTRVatTu root)
 	return false;
 }
 
-void InsertTree(PTRVatTu& p, char addKey, VatTu addVatTu)
+PTRVatTu InsertTree(PTRVatTu& p, char addKey[], VatTu addVatTu)
 {
 	if (p == NULL) //tim duoc vi tri de them, tao cho no vung nho va cho no gia tri
 	{
-		p = new NodesTree;
-		p->data = addData;
-		p->key = addKey;
+		p = new NodeVatTu;
+		p->infoVatTu = addVatTu;
+		strcpy(p->maVatTu, addKey);
 		p->left = NULL;
 		p->right = NULL;
+		return p;
 	}
-	else if (addKey < p->key) //khoa can them nho hon khoa nut hien tai thi qua trai
-		InsertTree(p->left, addKey, addData);
+	else if (strcmp(addKey, p->maVatTu) < 0) //khoa can them nho hon khoa nut hien tai thi qua trai
+		InsertTree(p->left, addKey, addVatTu);
 	else //khoa can them lon hon khoa nut hien tai thi qua phai
-		InsertTree(p->right, addKey, addData);
+		InsertTree(p->right, addKey, addVatTu);
 }
 
-void DeleteTree(PTRVatTu& p, char deleteVatTu)
+//bien maVatTuThayDoiVungNho de phuc vu cho viec cap nhat double linked list
+//boi vi double linked list phan gia tri la vung nho cua tree, khi xoa delete case 3, vung nho node bi xoa la node tan cung ben trai cua cay con ben phai cua node can xoa (copy gia tri tu node tan cung ben trai vo cho node can xoa, roi xoa node con tan cung ben trai do) chu khong phai la vung nho node can xoa, vay nen vung nho moi cua node tree tan cung ben trai do trong double linked list se la vung nho cua "node tree can xoa ban dau"
+void DeleteTree(PTRVatTu& p, char deleteKey[], char maVatTuThayDoiVungNho[])
 {
 	if (p == NULL) //dieu kien dung de quy
 		cout << "Phan tu can xoa khong ton tai!";
 	else //van con phan tu
 	{
-		if (delKey < p->key) //khoa can them nho hon nut hien tai thi qua trai
-			DeleteTree(p->left, delKey);
-		else if (delKey > p->key) //khoa can them lon hon nut hien tai thi qua phai
-			DeleteTree(p->right, delKey);
-		else //tim duoc phan tu de xoa, delKey = p->key
+		if (strcmp(deleteKey, p->maVatTu) < 0) //khoa can them nho hon nut hien tai thi qua trai
+			DeleteTree(p->left, deleteKey, maVatTuThayDoiVungNho);
+		else if (strcmp(deleteKey, p->maVatTu) > 0) //khoa can them lon hon nut hien tai thi qua phai
+			DeleteTree(p->right, deleteKey, maVatTuThayDoiVungNho);
+		else //tim duoc phan tu de xoa, deleteKey = p->maVatTu
 		{
 			PTRVatTu temp = p; //tao temp va tro vao vi tri cua phan tu can xoa
 			if (p->left == NULL) //TH ko co cay con ben trai
@@ -46,23 +49,41 @@ void DeleteTree(PTRVatTu& p, char deleteVatTu)
 			else if (p->right == NULL)//TH ko co cay con ben phai
 				p = p->left;
 			else
-				DeleteTreeCase3(p->right, temp); //TH nut can xoa co 2 nut con, tim nut tan cung ben trai cua cay con ben phai
+				DeleteTreeCase3(p->right, temp, maVatTuThayDoiVungNho); //TH nut can xoa co 2 nut con, tim nut tan cung ben trai cua cay con ben phai
 			delete temp;
 		}
 	}
 
 }
 
-void DeleteTreeCase3(PTRVatTu& p, PTRVatTu& temp)
+void DeleteTreeCase3(PTRVatTu& p, PTRVatTu& temp, char maVatTuThayDoiVungNho[])
 {
 	if (p->left != NULL) //de quy de tim ra phan tu trai tan cung 
-		DeleteTreeCase3(p->left, temp);
+		DeleteTreeCase3(p->left, temp, maVatTuThayDoiVungNho);
 	else //p luc nay la phan tu trai tan cung, temp van giu gia tri p dau tien
 	{
-		//copy data tu p qua temp
-		temp->key = p->key;
-		temp->data = p->data;
+		strcpy(maVatTuThayDoiVungNho, p->maVatTu);
+		//copy infoVatTu tu p qua temp
+		strcpy(temp->maVatTu, p->maVatTu);
+		temp->infoVatTu = p->infoVatTu;
 		temp = p; //temp giu vi tri can xoa
 		p = p->right; //noi lai cay con ben phai cua p vao lai cay //vi no la nut tan cung ben trai nen no chi co cay con ben phai hoac ko co nut la nao
+	}
+}
+
+PTRVatTu TimKiemVatTu(PTRVatTu p, char findKey[])
+{
+	if (p == NULL){
+		return NULL; //dieu kien dung de quy->ko tim thay node can tim
+	}
+	
+	if (strcmp(findKey, p->maVatTu) == 0) {
+		return p;
+	}
+	else if (strcmp(findKey, p->maVatTu) > 0) {
+		return TimKiemVatTu(p->right, findKey); //return ve ham chu ko don thuan la chi goi ham nhu cac thuat toan duyet, nhu vay se giu duoc ket qua cua vong de quy sau nhat da di toi
+	}
+	else {
+		return TimKiemVatTu(p->left, findKey);
 	}
 }

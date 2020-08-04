@@ -1,17 +1,17 @@
-# Project: Project1
+# Project: QuanLyVatTu
 # Makefile created by Dev-C++ 5.11
 
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o FirstMenu.o Design.o mylib.o
-LINKOBJ  = main.o FirstMenu.o Design.o mylib.o
+OBJ      = CayNhiPhan.o DanhSachChiTietHoaDon.o DanhSachHoaDon.o DanhSachLienKetDon.o DanhSachLienKetKep.o DanhSachNhanVien.o DanhSachTuyenTinh.o DanhSachVatTu.o Design.o FirstMenu.o MangConTro.o mylib.o TestDSMangConTro.o WorkWithFile.o XuLyChuoi.o main.o
+LINKOBJ  = CayNhiPhan.o DanhSachChiTietHoaDon.o DanhSachHoaDon.o DanhSachLienKetDon.o DanhSachLienKetKep.o DanhSachNhanVien.o DanhSachTuyenTinh.o DanhSachVatTu.o Design.o FirstMenu.o MangConTro.o mylib.o TestDSMangConTro.o WorkWithFile.o XuLyChuoi.o main.o
 LIBS     = -L"E:/dev c/Dev-Cpp/MinGW64/lib" -L"E:/dev c/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"E:/dev c/Dev-Cpp/MinGW64/include" -I"E:/dev c/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/dev c/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"E:/dev c/Dev-Cpp/MinGW64/include" -I"E:/dev c/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/dev c/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/dev c/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = Project1.exe
-CXXFLAGS = $(CXXINCS) -g3
-CFLAGS   = $(INCS) -g3
+BIN      = QuanLyVatTu.exe
+CXXFLAGS = $(CXXINCS) -std=c++11 -g3
+CFLAGS   = $(INCS) -std=c++11 -g3
 RM       = rm.exe -f
 
 .PHONY: all all-before all-after clean clean-custom
@@ -24,14 +24,50 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-main.o: main.cpp
-	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+CayNhiPhan.o: CayNhiPhan.cpp
+	$(CPP) -c CayNhiPhan.cpp -o CayNhiPhan.o $(CXXFLAGS)
 
-FirstMenu.o: FirstMenu.cpp
-	$(CPP) -c FirstMenu.cpp -o FirstMenu.o $(CXXFLAGS)
+DanhSachChiTietHoaDon.o: DanhSachChiTietHoaDon.cpp
+	$(CPP) -c DanhSachChiTietHoaDon.cpp -o DanhSachChiTietHoaDon.o $(CXXFLAGS)
+
+DanhSachHoaDon.o: DanhSachHoaDon.cpp
+	$(CPP) -c DanhSachHoaDon.cpp -o DanhSachHoaDon.o $(CXXFLAGS)
+
+DanhSachLienKetDon.o: DanhSachLienKetDon.cpp
+	$(CPP) -c DanhSachLienKetDon.cpp -o DanhSachLienKetDon.o $(CXXFLAGS)
+
+DanhSachLienKetKep.o: DanhSachLienKetKep.cpp
+	$(CPP) -c DanhSachLienKetKep.cpp -o DanhSachLienKetKep.o $(CXXFLAGS)
+
+DanhSachNhanVien.o: DanhSachNhanVien.cpp
+	$(CPP) -c DanhSachNhanVien.cpp -o DanhSachNhanVien.o $(CXXFLAGS)
+
+DanhSachTuyenTinh.o: DanhSachTuyenTinh.cpp
+	$(CPP) -c DanhSachTuyenTinh.cpp -o DanhSachTuyenTinh.o $(CXXFLAGS)
+
+DanhSachVatTu.o: DanhSachVatTu.cpp
+	$(CPP) -c DanhSachVatTu.cpp -o DanhSachVatTu.o $(CXXFLAGS)
 
 Design.o: Design.cpp
 	$(CPP) -c Design.cpp -o Design.o $(CXXFLAGS)
 
+FirstMenu.o: FirstMenu.cpp
+	$(CPP) -c FirstMenu.cpp -o FirstMenu.o $(CXXFLAGS)
+
+MangConTro.o: MangConTro.cpp
+	$(CPP) -c MangConTro.cpp -o MangConTro.o $(CXXFLAGS)
+
 mylib.o: mylib.cpp
 	$(CPP) -c mylib.cpp -o mylib.o $(CXXFLAGS)
+
+TestDSMangConTro.o: TestDSMangConTro.cpp
+	$(CPP) -c TestDSMangConTro.cpp -o TestDSMangConTro.o $(CXXFLAGS)
+
+WorkWithFile.o: WorkWithFile.cpp
+	$(CPP) -c WorkWithFile.cpp -o WorkWithFile.o $(CXXFLAGS)
+
+XuLyChuoi.o: XuLyChuoi.cpp
+	$(CPP) -c XuLyChuoi.cpp -o XuLyChuoi.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
