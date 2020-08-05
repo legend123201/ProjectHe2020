@@ -31,27 +31,28 @@ int main() {
 
 	PTRVatTu root;
 	CreateTree(root);
-	DocFileVatTu(root, "OutputVatTu.txt");
+	DocFileVatTu(root, "VatTu.txt");
 	
 	//OutPutConsole_NLR(root);
 
 	DSNhanVien dsNhanVien;
 	CreateMangConTro(dsNhanVien);
-	DocFileNhanVien(dsNhanVien, "OutputNhanVien.txt");
+	DocFileNhanVien(dsNhanVien, "NhanVien.txt");
 	
 	
-	for (int i = 0; i < dsNhanVien.soLuongNhanVien; i++) { //ktra tung nhan vien
-
-		for (PTRHoaDon run = dsNhanVien.nodesNhanVien[i]->listHoaDon.first; run != NULL; run = run->next) { //kiem tra tung hoa don cua nhan vien do
-
-			for (int j = 0; j < run->infoHoaDon.dsCTHD.soLuongVatTu; j++) {//kiem tra tung cthd cua hoa don do
-
-				if (run->infoHoaDon.dsCTHD.nodesCTHD[j].trangThai == 0) {
-					run->infoHoaDon.dsCTHD.nodesCTHD[j].trangThai = 1;
-				}
-			}	
-		}
-	}
+	//tu dau file co tat ca chi tiet hoa don la trang thai 0
+//	for (int i = 0; i < dsNhanVien.soLuongNhanVien; i++) { //ktra tung nhan vien
+//
+//		for (PTRHoaDon run = dsNhanVien.nodesNhanVien[i]->listHoaDon.first; run != NULL; run = run->next) { //kiem tra tung hoa don cua nhan vien do
+//
+//			for (int j = 0; j < run->infoHoaDon.dsCTHD.soLuongVatTu; j++) {//kiem tra tung cthd cua hoa don do
+//
+//				if (run->infoHoaDon.dsCTHD.nodesCTHD[j].trangThai == 0) {
+//					run->infoHoaDon.dsCTHD.nodesCTHD[j].trangThai = 1;
+//				}
+//			}	
+//		}
+//	}
 
 	ListVatTu listVatTu;
 	CreateList(listVatTu);
@@ -59,8 +60,7 @@ int main() {
 
 	MainFirstMenu(dsNhanVien, listVatTu, root);
 
-	cout << dsNhanVien.soLuongNhanVien;
-	GhiFileVatTu(root, "OutputVatTu2.txt");
-	GhiFileNhanVien(dsNhanVien, "OutputNhanVien2.txt");
+	GhiFileVatTu(root, "VatTu.txt");
+	GhiFileNhanVien(dsNhanVien, "NhanVien.txt");
 	return 0;
 }

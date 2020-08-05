@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=1
 CompilerSettings=00000000c0000000001000000
-UnitCount=36
+UnitCount=34
 
 [VersionInfo]
 Major=1
@@ -201,25 +201,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit16]
-FileName=OutputNhanVien.txt
-Folder=Data
-Compile=0
-Link=0
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit17]
-FileName=OutputNhanVien2.txt
-Folder=Data
-Compile=0
-Link=0
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit18]
-FileName=OutputVatTu.txt
+FileName=NhanVien.txt
 Folder=Data
 Compile=0
 Link=0
@@ -228,35 +210,16 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit19]
-FileName=OutputVatTu2.txt
-Folder=Data
-Compile=0
-Link=0
+FileName=DanhSachChiTietHoaDon.h
+Folder=HeaderFiles
+Compile=1
+Link=1
 Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
+CompileCpp=1
 
 [Unit20]
-FileName=CayNhiPhan.h
-CompileCpp=1
-Folder=HeaderFiles
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit21]
-FileName=DanhSachChiTietHoaDon.h
-CompileCpp=1
-Folder=HeaderFiles
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit22]
 FileName=DanhSachHoaDon.h
 CompileCpp=1
 Folder=HeaderFiles
@@ -266,7 +229,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit23]
+[Unit21]
 FileName=DanhSachLienKetDon.h
 CompileCpp=1
 Folder=HeaderFiles
@@ -276,7 +239,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit24]
+[Unit22]
 FileName=DanhSachLienKetKep.h
 CompileCpp=1
 Folder=HeaderFiles
@@ -286,7 +249,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit25]
+[Unit23]
 FileName=DanhSachNhanVien.h
 CompileCpp=1
 Folder=HeaderFiles
@@ -296,7 +259,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit26]
+[Unit24]
 FileName=DanhSachTuyenTinh.h
 CompileCpp=1
 Folder=HeaderFiles
@@ -306,7 +269,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit27]
+[Unit25]
 FileName=DanhSachVatTu.h
 CompileCpp=1
 Folder=HeaderFiles
@@ -316,7 +279,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit28]
+[Unit26]
 FileName=Design.h
 CompileCpp=1
 Folder=HeaderFiles
@@ -326,7 +289,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit29]
+[Unit27]
 FileName=FirstMenu.h
 CompileCpp=1
 Folder=HeaderFiles
@@ -336,7 +299,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit30]
+[Unit28]
 FileName=MangConTro.h
 CompileCpp=1
 Folder=HeaderFiles
@@ -346,7 +309,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit31]
+[Unit29]
 FileName=mylib.h
 CompileCpp=1
 Folder=HeaderFiles
@@ -356,7 +319,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit32]
+[Unit30]
 FileName=Structure.h
 CompileCpp=1
 Folder=HeaderFiles
@@ -366,7 +329,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit33]
+[Unit31]
 FileName=ValuesDefine.h
 CompileCpp=1
 Folder=HeaderFiles
@@ -376,10 +339,30 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit34]
+[Unit32]
 FileName=WorkWithFile.h
 CompileCpp=1
 Folder=HeaderFiles
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit33]
+FileName=XuLyChuoi.h
+CompileCpp=1
+Folder=HeaderFiles
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit34]
+FileName=main.cpp
+CompileCpp=1
+Folder=Main
 Compile=1
 Link=1
 Priority=1000
@@ -400,6 +383,25 @@ BuildCmd=
 FileName=main.cpp
 CompileCpp=1
 Folder=Main
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit17]
+FileName=VatTu.txt
+Folder=Data
+Compile=0
+Link=0
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit18]
+FileName=CayNhiPhan.h
+CompileCpp=1
+Folder=HeaderFiles
 Compile=1
 Link=1
 Priority=1000
