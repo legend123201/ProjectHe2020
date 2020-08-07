@@ -6,9 +6,9 @@ CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
 OBJ      = CayNhiPhan.o DanhSachChiTietHoaDon.o DanhSachHoaDon.o DanhSachLienKetDon.o DanhSachLienKetKep.o DanhSachNhanVien.o DanhSachTuyenTinh.o DanhSachVatTu.o Design.o FirstMenu.o MangConTro.o mylib.o TestDSMangConTro.o WorkWithFile.o XuLyChuoi.o main.o
 LINKOBJ  = CayNhiPhan.o DanhSachChiTietHoaDon.o DanhSachHoaDon.o DanhSachLienKetDon.o DanhSachLienKetKep.o DanhSachNhanVien.o DanhSachTuyenTinh.o DanhSachVatTu.o Design.o FirstMenu.o MangConTro.o mylib.o TestDSMangConTro.o WorkWithFile.o XuLyChuoi.o main.o
-LIBS     = -L"E:/dev c/Dev-Cpp/MinGW64/lib" -L"E:/dev c/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
-INCS     = -I"E:/dev c/Dev-Cpp/MinGW64/include" -I"E:/dev c/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/dev c/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
-CXXINCS  = -I"E:/dev c/Dev-Cpp/MinGW64/include" -I"E:/dev c/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/dev c/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/dev c/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+LIBS     = -L"D:/devc/Dev-Cpp/MinGW64/lib" -L"D:/devc/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"D:/devc/Dev-Cpp/MinGW64/include" -I"D:/devc/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/devc/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/devc/Dev-Cpp/MinGW64/include" -I"D:/devc/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/devc/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/devc/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
 BIN      = QuanLyVatTu.exe
 CXXFLAGS = $(CXXINCS) -std=c++11 -g3
 CFLAGS   = $(INCS) -std=c++11 -g3
