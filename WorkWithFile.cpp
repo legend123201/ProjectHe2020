@@ -37,17 +37,6 @@ void GhiFileVatTu(PTRVatTu root, string nameFile)
 		return;
 	}
 
-	/*for (ListVatTu temp = this->dsVatTuChinh.GetFirstListVatTu(); temp != NULL; temp = temp->right)
-	{
-		write << temp->maVT;
-		write << "+";
-		write << temp->info.tenVT;
-		write << "+";
-		write << temp->info.soLuongTon;
-		write << "+";
-		write << temp->info.donViTinh;
-		write << "+" << endl;
-	}*/
 	GhiFile_NLR(root, f);
 }
 

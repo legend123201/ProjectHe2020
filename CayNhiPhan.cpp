@@ -37,9 +37,9 @@ void DeleteTree(PTRVatTu& p, char deleteKey[], char maVatTuThayDoiVungNho[])
 		cout << "Phan tu can xoa khong ton tai!";
 	else //van con phan tu
 	{
-		if (strcmp(deleteKey, p->maVatTu) < 0) //khoa can them nho hon nut hien tai thi qua trai
+		if (strcmp(deleteKey, p->maVatTu) < 0) //khoa can xoa nho hon nut hien tai thi qua trai
 			DeleteTree(p->left, deleteKey, maVatTuThayDoiVungNho);
-		else if (strcmp(deleteKey, p->maVatTu) > 0) //khoa can them lon hon nut hien tai thi qua phai
+		else if (strcmp(deleteKey, p->maVatTu) > 0) //khoa can xoa lon hon nut hien tai thi qua phai
 			DeleteTree(p->right, deleteKey, maVatTuThayDoiVungNho);
 		else //tim duoc phan tu de xoa, deleteKey = p->maVatTu
 		{

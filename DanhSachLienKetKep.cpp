@@ -65,10 +65,13 @@ void InsertAfter(PTRVatTu2& p, PTRVatTu& nodeTreeVatTu)
 	strcpy(q->maVatTu, nodeTreeVatTu->maVatTu);
 	q->nodeTreeVatTu = nodeTreeVatTu;
 
+	//phan tu moi noi vao list
 	//q->right la node dang sau p, q->left la p
 	q->right = p->right;
 	q->left = p;
-	//phan tu dang sau p se co left la q (ptu vua them), va p -> right la q
+	
+	//phan tu trong list noi vao phan tu moi
+	//phan tu dang sau p ban dau se co left la q (ptu vua them), va p -> right la q
 	p->right->left = q; //hoac q->right->left = q;
 	p->right = q;
 }

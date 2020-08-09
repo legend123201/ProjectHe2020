@@ -1,4 +1,4 @@
-B7+Ak47+Cay+104.00+
+B7+Ak47+Cay+110.00+
 B6+C4+Tan+6.00+
 A1+Dinh 1mm+Cai+9.00+
 A2+Dinh 2mm+Cai+8.00+
@@ -12,14 +12,14 @@ A8+Dinh 8mm+Cai+0.00+
 B2+Go+M+10.00+
 B+Ruou+Thung+2.00+
 A9+Oc 9mm+Cai+4.00+
-B1+Bia+Thung+11.00+
+B1+Bia+Thung+16.00+
 B3+Thiec 3mm+M2+4.00+
 B5+Tnt+Tan+11.00+
 B4+Ton 4mm+M2+11.00+
 B5HJK+Quan Jean+Cai+150.00+
 B9+Kar98k+Cay+37.00+
-B8+M4p1+Cay+173.00+
+B8+M4p1+Cay+163.00+
 B85THK+Giay Ve Sinh+Cuon+1000.00+
-SKTT1+Ao+Cai+100.00+
-D98+Balo+Cai+79.00+
-C50+Laptop+Cai+400.00+
+SKTT1+Ao+Cai+98.00+
+D98+Balo+Cai+78.00+
+C50+Laptop+Cai+397.00+

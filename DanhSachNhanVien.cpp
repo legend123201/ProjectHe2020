@@ -60,8 +60,12 @@ int KiemTraNhanVienTrungVaSoCMND(NhanVien addNhanVien, DSNhanVien dsNhanVien)
 	return 0;
 }
 
-int KiemTraNhanVienTrungKhiSuaNhanVien(NhanVien fixingNhanVien, int indexCurrent, DSNhanVien dsNhanVien)
+int KiemTraNhanVienTrungVaSoCMNDKhiSuaNhanVien(NhanVien fixingNhanVien, int indexCurrent, DSNhanVien dsNhanVien)
 {
+	if (string(fixingNhanVien.soCMND).length() < 9) {
+		return 3;
+	}
+	
 	if (fixingNhanVien.maNhanVien != dsNhanVien.nodesNhanVien[indexCurrent]->maNhanVien) { //neu ma nhan vien bi thay doi moi xet
 		for (int i = 0; i < dsNhanVien.soLuongNhanVien; i++) {
 			if (fixingNhanVien.maNhanVien == dsNhanVien.nodesNhanVien[i]->maNhanVien) {
@@ -122,7 +126,7 @@ void ENTER_Keyhit_F1_SuaNhanVien(int keyHit, DSNhanVien& dsNhanVien, int& indexF
 				int luaChon = XuatOThongBao(thongBao, options, 2);
 				if (luaChon == 0) { //huy viec sua
 					ClearWorkFrame();
-					WriteForm_INS(toaDoX, toaDoY, fixingNhanVien);
+					WriteForm_INS(toaDoX, toaDoY, *dsNhanVien.nodesNhanVien[indexCurrent]);
 					WriteTitle("XEM NHAN VIEN");
 					return;
 				}
@@ -148,9 +152,9 @@ void ENTER_Keyhit_F1_Keyhit_F1_SuaNhanVien(int keyHit, NhanVien fixingNhanVien, 
 		int kiemTraRong = KiemTraNhanVienRong(fixingNhanVien);
 
 		if (kiemTraRong == 0) { //ko rong
-			int kiemTraTrung = KiemTraNhanVienTrungKhiSuaNhanVien(fixingNhanVien, indexCurrent, dsNhanVien);
+			int kiemTraTrung = KiemTraNhanVienTrungVaSoCMNDKhiSuaNhanVien(fixingNhanVien, indexCurrent, dsNhanVien);
 
-			if (kiemTraTrung == 0) { //ko trung
+			if (kiemTraTrung == 0) { //ko trung va so CMND hop le
 				string thongBao[3] = { "Thong tin cua nhan vien hop le!", "Ban co chac chan muon sua nhan vien?" };
 				string options[3] = { "Dong y", "Huy" };
 				ClearWorkFrame();
@@ -194,6 +198,8 @@ void ENTER_Keyhit_F1_Keyhit_F1_SuaNhanVien(int keyHit, NhanVien fixingNhanVien, 
 				case 2:
 					thongBaoLoi = "So CMND cua nhan vien bi trung!";
 					break;
+				case 3:
+					thongBaoLoi = "So CMND cua nhan vien phai co it nhat 9 ki tu!";
 				default:
 					break;
 				}

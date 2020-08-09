@@ -94,7 +94,7 @@ Date StringToDate(string s)
 
     result.ngay = (int)(s[0] - '0') * 10 + (int)(s[1] - '0');
     result.thang = (int)(s[2] - '0') * 10 + (int)(s[3] - '0');
-    for (int i = 4; i < s.length(); i++)
+    for (int i = 4; i < s.length(); i++) //bat dau tu phan tu 5 (index la 4) tro di, vi 4 phan tu dau la ngay va thang
         result.nam = result.nam * 10 + (int)(s[i] - '0');
 
     return result;
@@ -103,25 +103,20 @@ Date StringToDate(string s)
 string DateToString(Date date)
 {
     string s = "";
-
-    s += (int)date.ngay / 10 + '0';
-    s += date.ngay % 10 + '0';
-    s += (int)date.thang / 10 + '0';
-    s += date.thang % 10 + '0';
-
-    int reverse = 0;
-
-    do
-    {
-        reverse = reverse * 10 + date.nam % 10;
-        date.nam /= 10;
-    } while (date.nam != 0);
-    int i = 4;
-    do
-    {
-        s += (int)(reverse % 10) + '0';
-        reverse /= 10;
-    } while (reverse != 0);
+    
+    //ngay va thang co 1 so thi cho them so 0 o dau, form doc file la ngay 2 so, thang 2 so
+    if(date.ngay < 10){
+        s+="0";
+    }
+    s+= to_string(date.ngay);
+    
+    if(date.thang < 10){
+        s+="0";
+    }
+    s+= to_string(date.thang);
+    
+    s+= to_string(date.nam);
+    
     return s;
 }
 

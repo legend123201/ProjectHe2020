@@ -161,7 +161,7 @@ int ChooseOption(string options[], int soOption, int toaDoX, int toaDoY) //soOpt
 	}
 }
 
-int XuatOThongBao(string thongBao[], string options[], int soOption) //soOption chi dc la 1 hoac 2
+int XuatOThongBao(string thongBao[], string options[], int soOption) //soOption chi dc la 1 hoac 2, toi da chi co 2 dong thong bao
 {
 	int toaDoX = (MAX_X_OF_MAIN_FRAME - START_X_OF_MAIN_FRAME)/2 + 25 - 40; //diem giua, +25 vi chieu dai o option main frame, -40 de tim diem bat dau, vi do dai ngang = 80
 	int toaDoY = (MAX_Y_OF_MAIN_FRAME - START_Y_OF_MAIN_FRAME)/2 - 10; //giong x
@@ -256,6 +256,7 @@ void WriteSectionGuide(string sectionGuide)
 {
 	int toaDoX = START_X_OF_MAIN_FRAME + 1;
 	int toaDoY = MAX_Y_OF_MAIN_FRAME - 1;
+	
 	int doDaiNgangCoTheViet = MAX_X_OF_MAIN_FRAME - START_X_OF_MAIN_FRAME;
 
 	SetColor(Blue);

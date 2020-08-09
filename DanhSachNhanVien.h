@@ -25,7 +25,7 @@ void NhanViencpy(NhanVien& nv1, NhanVien nv2);
 
 int KiemTraNhanVienRong(NhanVien addNhanVien);
 int KiemTraNhanVienTrungVaSoCMND(NhanVien addNhanVien, DSNhanVien dsNhanVien);
-int KiemTraNhanVienTrungKhiSuaNhanVien(NhanVien fixingNhanVien, int indexCurrent, DSNhanVien dsNhanVien);
+int KiemTraNhanVienTrungVaSoCMNDKhiSuaNhanVien(NhanVien fixingNhanVien, int indexCurrent, DSNhanVien dsNhanVien);
 
 //key hit after press ENTER (xem nhan vien, sua nhan vien, xem hoa don)
 //y tuong cua viec sua nhan vien y chang them nhan vien, luu lai gia tri nhan vien dang sua va xoa no trong ds sinh vien, chi khac phan them nhan vien o cho huy viec sua thi no add cai nhan vien da luu tru vao lai

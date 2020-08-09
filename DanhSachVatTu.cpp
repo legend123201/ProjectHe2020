@@ -149,7 +149,7 @@ void ENTER_Keyhit_F1_SuaVatTu(int keyHit, ListVatTu& listVatTu, PTRVatTu& root, 
 				int luaChon = XuatOThongBao(thongBao, options, 2);
 				if (luaChon == 0) { //huy viec sua
 					ClearWorkFrame();
-					WriteForm_INS(toaDoX, toaDoY, fixingVatTu->maVatTu, fixingVatTu->infoVatTu);
+					WriteForm_INS(toaDoX, toaDoY, currentNode->maVatTu, currentNode->nodeTreeVatTu->infoVatTu);
 					WriteTitle("XEM VAT TU");
 					return;
 				}

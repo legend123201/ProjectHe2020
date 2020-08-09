@@ -27,6 +27,32 @@ void OutPutConsole_NLR(PTRVatTu p)
 	}
 }
 
+//dung LRN de ko xoa delete case 3 -> ton time
+void GiaiPhongVungNhoVatTu_LRN(PTRVatTu& p){
+	if (p != NULL)
+	{
+		GiaiPhongVungNhoVatTu_LRN(p->left);
+		GiaiPhongVungNhoVatTu_LRN(p->right);		
+		
+		//phan xu ly
+		delete p;
+	}
+}
+
+void GiaiPhongVungNhoNhanVien(DSNhanVien& dsNhanVien){
+	PTRHoaDon temp;
+	for(int i = 0; i < dsNhanVien.soLuongNhanVien; i++){
+		
+		while(dsNhanVien.nodesNhanVien[i]->listHoaDon.first != NULL){
+			
+			temp = dsNhanVien.nodesNhanVien[i]->listHoaDon.first;
+			dsNhanVien.nodesNhanVien[i]->listHoaDon.first = dsNhanVien.nodesNhanVien[i]->listHoaDon.first->next;
+			delete temp;
+		}
+		delete dsNhanVien.nodesNhanVien[i];
+	}
+}
+
 int main() {
 
 	PTRVatTu root;
@@ -38,21 +64,6 @@ int main() {
 	DSNhanVien dsNhanVien;
 	CreateMangConTro(dsNhanVien);
 	DocFileNhanVien(dsNhanVien, "NhanVien.txt");
-	
-	
-	//tu dau file co tat ca chi tiet hoa don la trang thai 0
-//	for (int i = 0; i < dsNhanVien.soLuongNhanVien; i++) { //ktra tung nhan vien
-//
-//		for (PTRHoaDon run = dsNhanVien.nodesNhanVien[i]->listHoaDon.first; run != NULL; run = run->next) { //kiem tra tung hoa don cua nhan vien do
-//
-//			for (int j = 0; j < run->infoHoaDon.dsCTHD.soLuongVatTu; j++) {//kiem tra tung cthd cua hoa don do
-//
-//				if (run->infoHoaDon.dsCTHD.nodesCTHD[j].trangThai == 0) {
-//					run->infoHoaDon.dsCTHD.nodesCTHD[j].trangThai = 1;
-//				}
-//			}	
-//		}
-//	}
 
 	ListVatTu listVatTu;
 	CreateList(listVatTu);
@@ -62,5 +73,9 @@ int main() {
 
 	GhiFileVatTu(root, "VatTu.txt");
 	GhiFileNhanVien(dsNhanVien, "NhanVien.txt");
+	
+	GiaiPhongVungNhoVatTu_LRN(root);
+	GiaiPhongVungNhoNhanVien(dsNhanVien);
+	
 	return 0;
 }

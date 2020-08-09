@@ -41,11 +41,10 @@ int InsertOrder(DSNhanVien& dsNV, NhanVien addNhanVien) { //tra ve vi tri them, 
 	return viTriThem;
 }
 
-int InsertLast(DSNhanVien& dsNV, NhanVien addNhanVien) {
+void InsertLast(DSNhanVien& dsNV, NhanVien addNhanVien) {
 	dsNV.nodesNhanVien[dsNV.soLuongNhanVien] = new NhanVien;
 	*dsNV.nodesNhanVien[dsNV.soLuongNhanVien] = addNhanVien;
 	dsNV.soLuongNhanVien++;
-	return 0;
 }
 
 int XoaNhanVienTheoViTri(DSNhanVien& dsNV, int index) {

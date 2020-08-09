@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = CayNhiPhan.o DanhSachChiTietHoaDon.o DanhSachHoaDon.o DanhSachLienKetDon.o DanhSachLienKetKep.o DanhSachNhanVien.o DanhSachTuyenTinh.o DanhSachVatTu.o Design.o FirstMenu.o MangConTro.o mylib.o TestDSMangConTro.o WorkWithFile.o XuLyChuoi.o main.o
-LINKOBJ  = CayNhiPhan.o DanhSachChiTietHoaDon.o DanhSachHoaDon.o DanhSachLienKetDon.o DanhSachLienKetKep.o DanhSachNhanVien.o DanhSachTuyenTinh.o DanhSachVatTu.o Design.o FirstMenu.o MangConTro.o mylib.o TestDSMangConTro.o WorkWithFile.o XuLyChuoi.o main.o
+OBJ      = CayNhiPhan.o DanhSachChiTietHoaDon.o DanhSachHoaDon.o DanhSachLienKetDon.o DanhSachLienKetKep.o DanhSachNhanVien.o DanhSachTuyenTinh.o DanhSachVatTu.o Design.o FirstMenu.o MangConTro.o mylib.o WorkWithFile.o XuLyChuoi.o main.o
+LINKOBJ  = CayNhiPhan.o DanhSachChiTietHoaDon.o DanhSachHoaDon.o DanhSachLienKetDon.o DanhSachLienKetKep.o DanhSachNhanVien.o DanhSachTuyenTinh.o DanhSachVatTu.o Design.o FirstMenu.o MangConTro.o mylib.o WorkWithFile.o XuLyChuoi.o main.o
 LIBS     = -L"D:/devc/Dev-Cpp/MinGW64/lib" -L"D:/devc/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"D:/devc/Dev-Cpp/MinGW64/include" -I"D:/devc/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/devc/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"D:/devc/Dev-Cpp/MinGW64/include" -I"D:/devc/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/devc/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/devc/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -59,9 +59,6 @@ MangConTro.o: MangConTro.cpp
 
 mylib.o: mylib.cpp
 	$(CPP) -c mylib.cpp -o mylib.o $(CXXFLAGS)
-
-TestDSMangConTro.o: TestDSMangConTro.cpp
-	$(CPP) -c TestDSMangConTro.cpp -o TestDSMangConTro.o $(CXXFLAGS)
 
 WorkWithFile.o: WorkWithFile.cpp
 	$(CPP) -c WorkWithFile.cpp -o WorkWithFile.o $(CXXFLAGS)
