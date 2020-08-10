@@ -50,14 +50,18 @@ bool KiemTraSoVATDung(ChiTietHoaDon addCTHD)
 	return false;
 }
 
-bool KiemTraDuSoLuongTon(ChiTietHoaDon addCTHD, char loaiHoaDon, PTRVatTu addVatTuCTHD) //neu no la hoa don xuat thi moi can ktra
+int KiemTraSoLuongTonVaDuSoLuongTon(ChiTietHoaDon addCTHD, char loaiHoaDon, PTRVatTu addVatTuCTHD) //neu no la hoa don xuat thi moi can ktra
 {
+	if(addCTHD.soLuong <= 0){
+		return 1;
+	}
+	
 	if (loaiHoaDon == 'X') {
 		if (addCTHD.soLuong > addVatTuCTHD->infoVatTu.soLuongTon) {
-			return false;
+			return 2;
 		}
 	}
-	return true;
+	return 0;
 }
 
 bool KiemTraTrungMaVatTu(DSChiTietHoaDon dsCTHD, ChiTietHoaDon addCTHD)
@@ -78,9 +82,9 @@ void INS_Keyhit_F1_ThemCTHD(int keyHit, ChiTietHoaDon addCTHD, char loaiHoaDon, 
 		if (kiemTraRong == 0) { //ko rong
 			int kiemTraVAT = KiemTraSoVATDung(addCTHD);
 			if (kiemTraVAT == true) { //so VAT hop le
-				int kiemTraDuHang = KiemTraDuSoLuongTon(addCTHD, loaiHoaDon, addVatTuCTHD);
+				int kiemTraSoLuongTonVaDuSoLuongTon = KiemTraSoLuongTonVaDuSoLuongTon(addCTHD, loaiHoaDon, addVatTuCTHD);
 
-				if (kiemTraDuHang == true) { //du so luong ton kho de them
+				if (kiemTraSoLuongTonVaDuSoLuongTon == 0) { //so luong ton hop le va du so luong ton kho de them
 					int kiemTraTrungMaVT = KiemTraTrungMaVatTu(dsCTHD, addCTHD);
 
 					if (kiemTraTrungMaVT == false) { //khong trung vat tu voi cac chi tiet hoa don da co
@@ -127,12 +131,26 @@ void INS_Keyhit_F1_ThemCTHD(int keyHit, ChiTietHoaDon addCTHD, char loaiHoaDon, 
 						WriteForm_INS(toaDoX, toaDoY, addCTHD, addVatTuCTHD);
 					}
 				}
-				else { //loi ko du so luong ton kho de them
-					string thongBao[3] = { "Chi tiet hoa don dang them khong hop le!", "So luong ton khong du de them!" };
+				else { //loi so luong ton khong hop le va ko du so luong ton kho de them
+					string thongBaoLoi;
+
+					switch (kiemTraSoLuongTonVaDuSoLuongTon)
+					{
+					case 1:
+						thongBaoLoi = "So luong phai lon hon 0!";
+						break;
+					case 2:
+						thongBaoLoi = "So luong ton khong du de them!";
+						break;
+					default:
+						break;
+					}
+		
+					string thongBao[3] = { "Chi tiet hoa don dang them khong hop le!", thongBaoLoi };
 					string options[3] = { "OK" };
 					ClearWorkFrame();
 					XuatOThongBao(thongBao, options, 1);
-
+		
 					keyHit = -1; //tru truong hop them thanh cong thi tat ca cac truong hop con lai phai ve lai form INS
 					ClearWorkFrame();
 					WriteForm_INS(toaDoX, toaDoY, addCTHD, addVatTuCTHD);

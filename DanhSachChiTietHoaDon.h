@@ -21,10 +21,10 @@ long long TriGiaChiTietHoaDon(ChiTietHoaDon cthd);
 
 int KiemTraCTHDRong(ChiTietHoaDon addCTHD);
 bool KiemTraSoVATDung(ChiTietHoaDon addCTHD);
-bool KiemTraDuSoLuongTon(ChiTietHoaDon addCTHD, char loaiHoaDon, PTRVatTu addVatTuCTHD);
+int KiemTraSoLuongTonVaDuSoLuongTon(ChiTietHoaDon addCTHD, char loaiHoaDon, PTRVatTu addVatTuCTHD);
 bool KiemTraTrungMaVatTu(DSChiTietHoaDon dsCTHD, ChiTietHoaDon addCTHD);
 
-//key hit after press INS (them nhan vien)
+//key hit after press INS (them cthd)
 void INS_Keyhit_F1_ThemCTHD(int keyHit, ChiTietHoaDon addCTHD, char loaiHoaDon, PTRVatTu addVatTuCTHD, DSChiTietHoaDon& dsCTHD, bool& flagThemThanhCong, int toaDoX, int toaDoY, int& indexFirst, int& indexLast, int& indexCurrent);
 void INS_Keyhit_F2_TimVatTu(int keyHit, ChiTietHoaDon& addCTHD, int toaDoX, int toaDoY, PTRVatTu& addVatTuCTHD, ListVatTu& listVatTu, PTRVatTu& root);
 void INS_Keyhit_Move_And_Enter(int keyHit, OptionThemChiTietHoaDon& optionThemChiTietHoaDon);
